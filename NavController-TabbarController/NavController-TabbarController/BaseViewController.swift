@@ -15,10 +15,6 @@ class BaseViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    
-    
-    // MARK: Update Contraints
-    
     var tranparent : Bool?{
         didSet{
             if tranparent == true{
@@ -26,6 +22,10 @@ class BaseViewController: UIViewController {
             }
         }
         
+    }
+    func setTranparentForNavigationBar() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics:.Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
     var setTitleForBackButton: String?{
         didSet{
@@ -35,17 +35,17 @@ class BaseViewController: UIViewController {
             print("goi bien nay")
         }
     }
-    func setTranparentForNavigationBar() {
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics:.Default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-    }
+
     func setTitleForBackButton(title: String) {
         print("goi phuong thuc")
         let backButton = UIBarButtonItem()
         backButton.title = title
         navigationItem.backBarButtonItem = backButton
-
+        
     }
+    
+    
+    // MARK: Update Contraints
     
     func updateContraint(contraint : NSLayoutConstraint!){
         print(contraint.constant)

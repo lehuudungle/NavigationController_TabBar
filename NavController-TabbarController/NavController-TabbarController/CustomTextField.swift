@@ -18,14 +18,13 @@ class CustomTextField: UITextField {
      }
      */
     
-    required init?(coder aDecoder: NSCoder) {  // phuong thuc khoi tao  cho lop con hoac lop co so
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         configure()
     }
     
     func configure() {
-        
         backgroundColor = UIColor.init(red: 221, green: 220, blue: 218, alpha: 0.3)
         textColor = UIColor.whiteColor()
         layer.cornerRadius = 4.0
@@ -65,19 +64,15 @@ class CustomTextField: UITextField {
         let paddingView = UIView(frame : CGRect(x: 0, y: 0, width: 44, height: 45))
         
         leftIconView.center = paddingView.center
-        print("anh view: \(paddingView.center)")
-        
         
         paddingView.addSubview(leftIconView)
         
         leftView = paddingView
-        
     }
     
     func configurePlaceHolderText(placeHolderInput : String, fontName : String, fontSize : CGFloat){
         
         let attributeDict = [NSFontAttributeName : UIFont.init(name: fontName, size: fontSize)!,NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
         
         attributedPlaceholder = NSAttributedString(string:placeHolderInput, attributes:attributeDict)
     

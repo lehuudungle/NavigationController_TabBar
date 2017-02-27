@@ -34,7 +34,7 @@ class LoginViewController: BaseViewController {
     
     @IBAction func signUpAction(sender: AnyObject) {
         let signupVC = storyboard?.instantiateViewControllerWithIdentifier("SignUpVC") as! SignUpViewController
-
+        
         navigationController?.pushViewController(signupVC, animated: true)
         
     }
@@ -69,7 +69,6 @@ class LoginViewController: BaseViewController {
         }
         
         if isAuthenticated == true{
-            
             let tabBar = BaseTabbarController()
             presentViewController(tabBar, animated: true, completion: nil)
 

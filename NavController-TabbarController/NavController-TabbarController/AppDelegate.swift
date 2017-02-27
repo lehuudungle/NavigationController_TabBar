@@ -21,8 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // đoạn code tạo navigationcontroler
         
+        
         let loginVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginVC") as!LoginViewController
-        // chú ý: basenavigationcontroller kế thừa từ lơp navigationcontroller nên lớp navigationcontroller có khởi tạo có 
+        // chú ý: basenavigationcontroller kế thừa từ lơp navigationcontroller nên lớp navigationcontroller có khởi tạo có
         // tham số ini(rootViewController: UIViewController)
         let navController = BaseNavigationController(rootViewController: loginVC)
         window?.rootViewController = navController
